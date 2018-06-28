@@ -1,4 +1,3 @@
-
 //Josh, the shop is broken
 #include <iostream>
 #include <windows.h>
@@ -78,6 +77,48 @@ void White(void){
 	SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 0xf );
 }
 };
+void res(void){
+	system("cls");
+	cout<<"Resolution Options :\n\n<1> - 1080p\n<2> - 1366 x 768\n<3> - 1360 x 768\n";
+	int rs;
+	rs=getche();
+	switch(rs){
+	
+	case'1':{
+			CONSOLE_FONT_INFOEX cfi;
+		cfi.cbSize = sizeof(cfi);
+		cfi.nFont = 0;
+		cfi.dwFontSize.X = 0;                   
+		cfi.dwFontSize.Y = 38;                  
+		cfi.FontFamily = FF_DONTCARE;
+		cfi.FontWeight = FW_NORMAL;
+			SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+			break;
+	}
+	case'2':{
+			CONSOLE_FONT_INFOEX cfi;
+		cfi.cbSize = sizeof(cfi);
+		cfi.nFont = 0;
+		cfi.dwFontSize.X = 0;                   
+		cfi.dwFontSize.Y = 26;                  
+		cfi.FontFamily = FF_DONTCARE;
+		cfi.FontWeight = FW_NORMAL;
+			SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+			break;
+	}
+	case'3':{
+			CONSOLE_FONT_INFOEX cfi;
+		cfi.cbSize = sizeof(cfi);
+		cfi.nFont = 0;
+		cfi.dwFontSize.X = 0;                   
+		cfi.dwFontSize.Y = 24;                  
+		cfi.FontFamily = FF_DONTCARE;
+		cfi.FontWeight = FW_NORMAL;
+			SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+			break;
+	}
+}
+}
 text tobj;
 void clr(void){//Clear Screen
 	system("cls");
@@ -1052,8 +1093,9 @@ void game(void){
 void menu(void){
 	tobj.Aqua();
 	for(;;){
+		clr();
 		cout << "\nCascade\n\n";
-		cout << "1. <New Game>\n2. <Load Game>\n3. <Delete Save>\n4. <Exit>\nInput : ";
+		cout << "1. <New Game>\n2. <Load Game>\n3. <Delete Save>\n4. <Options>\n5. <Exit>\nInput : ";
 		char mmi;
 		mmi=getche();
 		switch(mmi){
@@ -1128,6 +1170,10 @@ void menu(void){
 				menu();
 			}
 			case'4':{
+				res();
+				break;
+			}
+			case '5':{
 				exit(0);
 				break;
 			}
@@ -1136,17 +1182,7 @@ void menu(void){
 }
 
 int main(){
-		//Changing font size
-//----------------------------
-CONSOLE_FONT_INFOEX cfi;
-cfi.cbSize = sizeof(cfi);
-cfi.nFont = 0;
-cfi.dwFontSize.X = 0;                   // Width of each character in the font
-cfi.dwFontSize.Y = 36;                  // Height
-cfi.FontFamily = FF_DONTCARE;
-cfi.FontWeight = FW_NORMAL;
-SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
-//----------------------------
+	
 
 	menu();
 }
