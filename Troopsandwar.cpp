@@ -7,7 +7,9 @@
 #include <conio.h>
 #include <cstdlib>
 #include <iomanip>
+#include <cwchar>
 using namespace std;
+
 
 class text{
 
@@ -141,7 +143,7 @@ void invd (void){
           case'2':{
             quit();
           }
-      }	
+      }
 }
 void bankruptcy(void){//Lose
 	clr();
@@ -163,9 +165,9 @@ void bankruptcy(void){//Lose
 void winbat(void){
 	clr();
 	int EFI;
-	
+
 	int troopslost = troopslost = EFI/2;
-  	
+
 	int workersGain = W/8;
 	cout << "We defended our home and we lost " << troopslost << " troops, " << workersGain << " workers!";
 	T = T - troopslost;
@@ -181,13 +183,13 @@ void winbat(void){
 void losebat(void){
 	int EFI;
 	clr();
-	
+
 	troopslost = troopslost =  EFI/1.25;
-	
+
 	int workersGain = W/8;
 	cout << "We lost the defense...\n we lost " << troopslost << " troops, " << workersGain << " workers and lost our land! \n(-" << (T*(1+(L/10))) * 2 << "(Troops)\n(-" << (T*(1+(L/10))) * 2 << "(Workers)";
 	enter();
-	
+
 	troopsMax = troopsMax - troopsMax/4;
 	workersMax = workersMax - workersMax/4;
 	T = T - troopslost;
@@ -206,10 +208,10 @@ void losebat(void){
 	}
 	deaths = deaths + troopslost;
 	enter();
-	
+
 
 if(T<0) {
-	
+
 	T=0;
 }
 }
@@ -225,13 +227,13 @@ void dayEnd(void){
 	 rng2 = rand() % 4;
 	if(rng == 1){//Battles
 		if(T>0){
-              
+
               switch(rng2){
-			  
+
               case 0:{
-	
+
 		float EF;
-		
+
 		EF = (1.5*L) + ((X/7.5)/2)-(EF/3);
 		int EFI = (1.5*L) + ((X/7.5)/2)-(EF/3);
             EF = EFI/2;
@@ -240,7 +242,7 @@ void dayEnd(void){
 		cout<<"\n\n Our Stratigists have predicted we have a %"<< BP <<" of winning!";
 		enter();
          if (BP > 100){
-         	winbat(); 
+         	winbat();
 		 }
 		else if((rand() % 101) < BP){
               	winbat();
@@ -251,9 +253,9 @@ void dayEnd(void){
               break;
               }
               case 1:{
-	
+
 		float EF;
-		
+
 		EF = (1.5*L) + ((X/7.5)/2)-(EF/3);
 		int EFI = (1.5*L) + ((X/7.5)/2)-(EF/3);
             EF = EFI/2;
@@ -262,7 +264,7 @@ void dayEnd(void){
 		cout<<"\n\n Our Stratigists have predicted we have a %"<< BP <<" of winning!";
 		enter();
          if (BP > 100){
-         	winbat(); 
+         	winbat();
 		 }
 		else if((rand() % 101) < BP){
               	winbat();
@@ -272,11 +274,11 @@ void dayEnd(void){
               }
               break;
               }
-      
+
             case 2:{
 
 		float EF;
-		
+
 		EF = (1.5*L) + ((X/7.5)/2);
 		int EFI = (1.5*L) + ((X/7.5)/2);
             EF = EFI/2;
@@ -285,7 +287,7 @@ void dayEnd(void){
 		cout<<"\n\n Our Stratigists have predicted we have a %"<< BP <<" of winning!";
 		enter();
          if (BP > 100){
-         	winbat(); 
+         	winbat();
 		 }
 		else if((rand() % 101) < BP){
               	winbat();
@@ -298,7 +300,7 @@ void dayEnd(void){
               case 3:{
 
 		float EF;
-		
+
 		EF = (1.5*L) + ((X/7.5)/2);
 		int EFI = (1.5*L) + ((X/7.5)/2);
             EF = EFI/2;
@@ -307,7 +309,7 @@ void dayEnd(void){
 		cout<<"\n\n Our Stratigists have predicted we have a %"<< BP <<" of winning!";
 		enter();
          if (BP > 100){
-         	winbat(); 
+         	winbat();
 		 }
 		else if((rand() % 101) < BP){
               	winbat();
@@ -318,12 +320,12 @@ void dayEnd(void){
               break;
               }
               }
-         }    
+         }
      // ------------
 		 else{
 		 	invd();
-		 } 
-	} 
+		 }
+	}
 
 
 
@@ -331,7 +333,7 @@ void dayEnd(void){
   	if( pd/7 == 1 ||pd/7 == 2 ||pd/7 == 3 ||pd/7 == 4){//Pay
 		G = G + (W*250);
 		int GoldChange = (W*250);
-		cout << "\n-Plus " << GoldChange << " Gold!";
+		cout << "You have sold your worker's product!\nIts payday fellas!\nWe earned " << GoldChange << " Gold!";
 	}
 	if(d==30){//Month Up
 		month++;
@@ -379,7 +381,7 @@ void dayEnd(void){
 	}
 	eta--;
 	if(eta == 0){
-		
+
 		if(rng == 1){//Battles
 		float EF;
 		EF = (1.5*L) + ((X/7.5)/2);
@@ -394,11 +396,11 @@ void dayEnd(void){
         	else{
               	losebat();
               }
-	} 
-		
+	}
+
 	}
 	enter();
-		
+
 }
 
 void bigmap(void){
@@ -750,7 +752,7 @@ void bigmap(void){
 					case'b':{
 						bigmap();
 						break;
-				
+
 				}
 				enter();
 				break;
@@ -767,17 +769,18 @@ void game(void){
 		cin.clear();
 		clr();
 		int Cit = (L+W+T)*1.25;
-		cout << Name << "'s Army\n\n";
+		cout <<"The " << Name << " Empire! \n\n";
 		cout << "\nGold:             " << G;
 		cout << "\nLevel:            " << L;
 		cout << "\nExperience:       " << X;
 		cout << "\nLand Owned:       " << troopsMax * 1000 + workersMax * 1000 << " square meters";
-		cout << "\nTroops:           " << T << " / " << troopsMax; 
+		cout << "\nTroops:           " << T << " / " << troopsMax;
 		cout << "\nWorkers:          " << W << " / " << workersMax;
 		cout << "\nTotal Citizens:   " << Cit;
 		cout << "\nDate:             " << month << " / " << d << " / " << y;
 		cout << "\n                  m / d / y";
 		cout << "\nDeaths:           " << deaths;
+		cout << "\n\nWhat shall we do commander?";
 		cout << "\n\n1-Pass Time\n2-Shop\n3-Map\n4-Options\n5-Load\n6-Save\n7-Exit\n\n";
 		char gi;
 		gi=getche();
@@ -789,7 +792,7 @@ void game(void){
 				clr();
 				cout << "Welcome to the Shop!\n\n";
 				cout << G << " - Gold\n";
-				cout << T << " / " << troopsMax << " - Troops\n" << W << " / " << workersMax << " - Workers\n"; 
+				cout << T << " / " << troopsMax << " - Troops\n" << W << " / " << workersMax << " - Workers\n";
 				cout << "1 - Troop        20G   (Defenses)\n";
 				cout << "2 - Worker       15G    (Income)\n";
 				cout << "3 - More Land   7500G    (Area)\n";
@@ -800,7 +803,7 @@ void game(void){
 					case'1':{//Troops
 					clr();
 						cout << G << " - Gold\n";
-						cout << "\nTroops:           " << T << " / " << troopsMax; 
+						cout << "\nTroops:           " << T << " / " << troopsMax;
 						cout << "\nWorkers:          " << W << " / " << workersMax;
 						cout << "\n\n1- 1 Troop      (20G)\n2- 10 Troops    (200G)\n3- 100 Troops   (10000G)\n4- Fill Max (Relative)\n5- Cancel";
 						char tsi;
@@ -866,7 +869,6 @@ void game(void){
 							  else {
 							  	cout<<"Not enough Gold or space, returning to Main Screen\n";
 							  	enter();
-                                                  
 							  }
 							}
 						}
@@ -874,9 +876,9 @@ void game(void){
 					}
 					case'2':{//Workers
 							clr();
-							cout << "\nTroops:           " << T << " / " << troopsMax; 
+							cout << "\nTroops:           " << T << " / " << troopsMax;
 							cout << "\nWorkers:          " << W << " / " << workersMax;
-							cout << "\n\n1- 1 Worker     (15G)\n2- 10 Workers   (150G)\n3- 100 Workers  (1500G)\n4- Fill Max (Relative)\n5- Can";
+							cout << "\n\n1- 1 Worker     (15G)\n2- 10 Workers   (150G)\n3- 100 Workers  (1500G)\nx4- Fill Max (Relative)\n5- Cancel";
 							char wsi;
 							wsi=getche();
 							switch(wsi){
@@ -926,9 +928,16 @@ void game(void){
 									break;
 								}
 								case'4':{
-									
+									clr();
+								if(G>((workersMax-W)*20) ){
+								G = G - (workersMax-W)*20;
+								W = workersMax;
 									break;
 								}
+                                              case'5':{
+                                                break;
+                                              }
+                                                }
 							}
 						break;
 					}
@@ -1043,13 +1052,13 @@ void game(void){
 void menu(void){
 	tobj.Aqua();
 	for(;;){
-		cout << "\n                 Troops and War,\n\n";
-		cout << "1. New Game\n2. Load Game\n3. Delete Save\n4. Exit\n\n";
+		cout << "\nCascade\n\n";
+		cout << "1. <New Game>\n2. <Load Game>\n3. <Delete Save>\n4. <Exit>\nInput : ";
 		char mmi;
 		mmi=getche();
 		switch(mmi){
 			case'1':{
-				
+
 				G = 6000;
 				d = 1;
 				month = 1;
@@ -1061,7 +1070,7 @@ void menu(void){
 				X = 0;
 				L = 1;
 				clr();
-				cout << "Enter Your Name: ";
+				cout << "What would you like to name your empire? : ";
 				cin >> Name;
 				game();
 				break;
@@ -1103,14 +1112,14 @@ void menu(void){
 				break;
 			}
 			case'3':{
-				
+
 				G = 6000;
 				d = 1;
 				month = 1;
 				y = 1;
 				workersMax = 20;
 				troopsMax = 10;
-				
+
 				W = 0;
 				T = 0;
 				X = 0;
@@ -1126,8 +1135,18 @@ void menu(void){
 	}
 }
 
-int main(){//Lieterialleeyeyeyyeyeyey Nothing
+int main(){
+		//Changing font size
+//----------------------------
+CONSOLE_FONT_INFOEX cfi;
+cfi.cbSize = sizeof(cfi);
+cfi.nFont = 0;
+cfi.dwFontSize.X = 0;                   // Width of each character in the font
+cfi.dwFontSize.Y = 36;                  // Height
+cfi.FontFamily = FF_DONTCARE;
+cfi.FontWeight = FW_NORMAL;
+SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+//----------------------------
+
 	menu();
 }
-
-   
