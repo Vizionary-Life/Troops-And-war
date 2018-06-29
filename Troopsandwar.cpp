@@ -262,6 +262,9 @@ void dayEnd(void){
 	G = G -((T*20)+(L*10)+(W*15));
 	d++;
 	cout << "\n\nEnd of Day:\n-----------------\n";
+	if(rd == 0){
+		cout<<"\n\nYour troops are still making their way...";
+	}
   	int rng;
       rng = rand() % 4;
 	  int rng2;
@@ -490,6 +493,7 @@ void bigmap(void){
 	cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n\n";
 				cout << "Pick a location (letter code)                                                30km/day\n";
 				cout << "b for Back\n\n";
+				int raid;
 				map=getche();
 				switch(map){
 					case'o':{
@@ -503,6 +507,8 @@ void bigmap(void){
                                 	eta = 3;
 						switch(map){
 							case'1':{
+								
+								raid = 0;
                                             	cout << "The enemy has " << EF << " troops";
 								cout << "How many troops would you like to send?";
                                             	cout << "1- +10% (" << EF+(EF/10) <<")\n2- 25% (" << (T/4) <<")\n3- 50% (" << T/2 << ")\n4- 75% (" << 3*(T/4) << ")\n5- 100% (" << T <<")\n\n";
@@ -550,6 +556,7 @@ void bigmap(void){
                                 	eta = 2;
 						switch(map){
 							case'1':{
+								raid = 0;
                                             	cout << "The enemy has " << EF << " troops";
 								cout << "How many troops would you like to send?";
                                             	cout << "1- +10% (" << EF+(EF/10) <<")\n2- 25% (" << (T/4) <<")\n3- 50% (" << T/2 << ")\n4- 75% (" << 3*(T/4) << ")\n5- 100% (" << T <<")\n\n";
@@ -597,6 +604,7 @@ void bigmap(void){
                                 	eta = 3;
 						switch(map){
 							case'1':{
+								raid = 0;
                                             	cout << "The enemy has " << EF << " troops";
 								cout << "How many troops would you like to send?";
                                             	cout << "1- +10% (" << EF+(EF/10) <<")\n2- 25% (" << (T/4) <<")\n3- 50% (" << T/2 << ")\n4- 75% (" << 3*(T/4) << ")\n5- 100% (" << T <<")\n\n";
@@ -644,6 +652,7 @@ void bigmap(void){
                                 	eta = 3;
 						switch(map){
 							case'1':{
+								raid = 0;
                                             	cout << "The enemy has " << EF << " troops";
 								cout << "How many troops would you like to send?";
                                             	cout << "1- +10% (" << EF+(EF/10) <<")\n2- 25% (" << (T/4) <<")\n3- 50% (" << T/2 << ")\n4- 75% (" << 3*(T/4) << ")\n5- 100% (" << T <<")\n\n";
@@ -691,6 +700,7 @@ void bigmap(void){
                                 	eta = 1;
 						switch(map){
 							case'1':{
+								raid = 0;
                                             	cout << "The enemy has " << EF << " troops";
 								cout << "How many troops would you like to send?";
                                             	cout << "1- +10% (" << EF+(EF/10) <<")\n2- 25% (" << (T/4) <<")\n3- 50% (" << T/2 << ")\n4- 75% (" << 3*(T/4) << ")\n5- 100% (" << T <<")\n\n";
@@ -762,7 +772,7 @@ void bigmap(void){
 	cout << "$   o - Homebase    p - Karltina   j - Nairda   t - Baggod   k - Norima   h - Jan    $\n";
 	cout << "$                                                                                    $\n";
 	cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n\n";
-				cout << "Pick a location (letter codeaths)                                                30km/day\n";
+				cout << "Pick a location (letter input)                                                30km/day\n";
 				cout << "b for Back\n\n";
 				cin >> map;
 				switch(map){
