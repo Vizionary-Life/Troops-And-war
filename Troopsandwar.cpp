@@ -448,6 +448,8 @@ void dayEnd(void){
 }
 
 void bigmap(void){
+	for(;;){
+	
 	cin.clear();
 	clr();
 	cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n";
@@ -742,13 +744,18 @@ void bigmap(void){
 						break;
 					}
 					case'b':{
-						bigmap();
+						
 						break;
 					}
                             cout << ST << " Troops have been sent out!";
                             enter();
 				}
 				break;
+			}
+			else{
+				clr();
+				cout<<"You have to be atleast level 1 to raid!";
+				enter();
 			}
 			break;
 		}
@@ -777,27 +784,39 @@ void bigmap(void){
 				cin >> map;
 				switch(map){
 					case'o':{
+						clr();
 						cout << "The distance from Homebase to Homebase is 0km\nIt will take roughly 0 days to travel there\n";
+						enter();
 						break;
 					}
 					case'p':{
+						clr();
 						cout << "The distance form Homebase to Karltina is 73km\nIt will take roughly 3 days to travel there\n";
+						enter();
 						break;
 					}
 					case'j':{
+						clr();
 						cout << "The distance from Homebase to Nairda is 36km\nIt will take roughly 2 days to travel there\n";
+						enter();
 						break;
 					}
 					case't':{
+						clr();
 						cout << "The distance from Homebase to Baggod is 64km\nIt will take roughly 3 days to travel there\n";
+						enter();
 						break;
 					}
 					case'k':{
+						clr();
 						cout << "The distance from Homebase to Norima is 80km\nIt will take roughly 3 days to travel there\n";
+						enter();
 						break;
 					}
 					case'h':{
+						clr();
 						cout << "The distance from Homebase to Jan is 15km\n It will take a day to travel there\n";
+						enter();
 						break;
 					}
 					case'b':{
@@ -811,8 +830,12 @@ void bigmap(void){
 		}
 		case'3':{
 			break;
+			break;
+			break;
+			
 		}
 	}
+}
 }
 }
 void game(void){
