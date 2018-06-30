@@ -9,7 +9,7 @@
 #include <cwchar>
 using namespace std;
 
-
+int raid;
 class text{
 
 	public :
@@ -262,7 +262,7 @@ void dayEnd(void){
 	G = G -((T*20)+(L*10)+(W*15));
 	d++;
 	cout << "\n\nEnd of Day:\n-----------------\n";
-	if(rd == 0){
+	if(raid == 1){
 		cout<<"\n\nYour troops are still making their way...";
 	}
   	int rng;
@@ -493,7 +493,7 @@ void bigmap(void){
 	cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n\n";
 				cout << "Pick a location (letter code)                                                30km/day\n";
 				cout << "b for Back\n\n";
-				int raid;
+				
 				map=getche();
 				switch(map){
 					case'o':{
